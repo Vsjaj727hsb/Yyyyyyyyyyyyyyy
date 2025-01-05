@@ -9,6 +9,8 @@ import os
 # insert your Telegram bot token here
 bot = telebot.TeleBot('7819992909:AAHn51FAfPId42gmKUT5wPmCoyC4_g9OeN0')
 
+bot.remove_webhook()
+
 # Admin user IDs
 admin_id = ["", "", "", "1662672529"]
 
